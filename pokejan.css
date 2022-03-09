@@ -29,7 +29,7 @@ li {
 #pokedex {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 15px;
+  grid-gap: 150px;
   padding-inline-start: 0;
 }
 
