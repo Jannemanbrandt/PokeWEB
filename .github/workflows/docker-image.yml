@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    -name: dokcer login
+    environment:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     - name: Building PokeWEB Docker Image
       run: docker build . --file Dockerfile --tag pokeweb:$(date +%s)
