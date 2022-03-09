@@ -3,8 +3,8 @@ const pokedex = document.getElementById("pokedex");
 const fetchPokemon = () => {
   const promises = [];
   for (let i = 1; i <= 100; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    //const url = `https://localhost:3046/apicalls/v1/pokejan${i}`;
+    //const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    const url = `http://localhost:3046/apicalls/v1/pokejan${i}`;
     promises.push(fetch(url).then((res) => res.json()));
   }
   Promise.all(promises).then((results) => {

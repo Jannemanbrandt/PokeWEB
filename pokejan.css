@@ -29,7 +29,11 @@ li {
 #pokedex {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+<<<<<<< HEAD
   grid-gap: 15px;
+=======
+  grid-gap: 150px;
+>>>>>>> 2b6a6f981ff68af7bbb7de64ded13c72419a2ced
   padding-inline-start: 0;
 }
 
@@ -108,5 +112,9 @@ li {
   background-color: #cc0000;
   color: #ffffff;
   border-radius: 15px;
+<<<<<<< HEAD
   transform: rotateY(180deg);
+=======
+  transform: rotateY(100deg);
+>>>>>>> 2b6a6f981ff68af7bbb7de64ded13c72419a2ced
 }
