@@ -15,7 +15,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build pokeweb
       run: |
-        docker build . --file Dockerfile --tag pokeweb:1.0.0
+        docker build . Dockerfile --tag pokeweb
     - name: docker push
       run: |
-        docker push pokeweb:1.0.0
+        docker push pokeweb
