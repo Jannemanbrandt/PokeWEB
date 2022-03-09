@@ -1,18 +1,21 @@
 name: CI Docker Image PokeWEB
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Building PokeWEB Docker Image
-      run: docker build . --file Dockerfile --tag pokeweb:$(date +%s)
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build pokeweb
+      run: |
+        docker build . --file Dockerfile --tag pokeweb:1.0.0
+    - name: docker push
+      run: |
+        docker push pokeweb:1.0.0
