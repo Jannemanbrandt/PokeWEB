@@ -18,5 +18,4 @@ jobs:
         docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER }}/pokeweb:latest
     - name: docker push
       run: |
-        docker push jannemanbrandt/pokeweb:1.0.0
         docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }} && docker push ${{ secrets.DOCKER_USER }}/pokeweb:latest
