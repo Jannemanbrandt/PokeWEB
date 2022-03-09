@@ -18,4 +18,4 @@ jobs:
         docker build . --file Dockerfile --tag pokeweb
     - name: docker push
       run: |
-        docker push pokeweb
+        docker push jannemanbrandt/pokeweb
